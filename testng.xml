@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+	<!-- thread count can be added in suite level , test leve also, in web broswers, ok, but in mobile devices, its not ok-->
+	<!--In suite level we have tests, so we add parallel = tests -->
+	<suite name="Suite" parallel="tests" thread-count="10">
+	
+	<listeners>
+		<listener class-name="sequence9_ItestListener.Listeners"></listener>
+	</listeners>
+	
+	
+	
+	<!--Global environment variables, Below paramter is suite level -->
+	<parameter name="URL" value="www.testDemo.com"></parameter>
+	<parameter name="APIKeyUserName" value="12345"></parameter>
+	
+	
+	
+	<!--In test level we have classes, so we add parallel = classes -->
+	
+	<test thread-count="5" parallel="classes"  name="Test1">
+		<!--Below paramter is test level -->
+		<parameter name="URL" value="www.test1Demo1.com"></parameter>
+	
+		<classes>
+			<class name="sequence8_TestNg.NewTest" />
+		</classes>
+	</test> <!--Test -->
+
+
+
+
+	<!--include, exclude approach-->
+
+	<test thread-count="5" name="Test2">
+		<classes>
+			<class name="sequence8_TestNg.NewTest">
+				<methods>
+					<include name="testName" />
+					<exclude name="testName" />
+					<exclude name="test.*"/>  <!--will exclude test cases starting -->
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	
+	
+	
+	
+	<!--package approach, when we have regression approach-->
+	<test name="test">
+		<packages>
+			<package name="sequence8_TestNg">		
+			</package>		
+		</packages>
+	</test>
+
+
+
+
+<!-- Client's requirement is to run 40 test cases for smoke out of 100 total regression-->
+	<test name="smokeTestCases">
+		<groups>
+			<run>
+				<include name="smoke"></include>
+			</run>			
+		</groups>
+		<classes>
+			<class name="package.Test1"></class>
+			<class name="package.Test2"></class>
+			<class name="package.Test3"></class>
+		</classes>
+	</test>
+	
+	
+	
+	
+
+
+
+</suite> <!--Suite -->

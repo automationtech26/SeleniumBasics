@@ -1,0 +1,41 @@
+
+Why Framework? its advantages
+
+Create Maven Structured Framework with all necessary Automation Dependencies
+
+Select Sample Ecommerce Application to Automate the end to end flow
+
+Implement Page Object Model mechanism to drive the locators from respective classed
+
+Drive object creation within Page Object classes encapsulating it from Tests
+
+Create Base Test which sets browser configuration details and Global properties
+
+Decide the Test Strategy, how tests should be clubbed and distributed with appropriate annotations
+
+Create TestNG Runner file to trigger the tests with one Single point of execution control
+
+Introduce Grouping in TestNG.xml to categorize tests with different tags of executions
+
+Implement Data Driven testing and Parametrization using TestNG Data provider HashMap and Json file readers
+
+Implement TestNG Listeners to capture Screenshot on automation test failures and logging
+
+Create Extent Report Wrapper to generate excellant HTML reports for the application
+
+Make framework necessary changes to support parallel execution with Thread safe mechanism
+
+Implement TestNG retry mechanism to rerun the failed flaky tests in the application
+
+Run the framework tests with Maven commands with TestNG Maven Integraton plugin
+
+Implement Maven Run time variables to replace global paramters of Test data at run time
+
+Integrate the framework with Jenkins with Paramterizartion Build Pipeline Jobs and Schedule the jobs on specific time features
+
+Add Cucumber Wrapper to existing framework with Cucumber TestNG Runner
+
+Create Feature files and Step definitions to support Cucmber execution of Selenium Tests
+
+Understand how cucumber tags, Data driven & Parametrization works with running the tests
+
